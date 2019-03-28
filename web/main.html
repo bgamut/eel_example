@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>champagne</title>
+        <script type="text/javascript" src="/eel.js"></script>
+        <script>
+            async function getTime(){
+                let value=await eel.getTime()();
+                alert(value);
+            }
+            eel.expose(say_hello_js);
+            function say_hello_js(a){
+                console.log('hello from '+a);
+            };
+            eel.expose(js_random);
+            function js_random(){
+                return Math.random();
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick = "getTime()">Click to get time</button>
+    </body>
+</html>
